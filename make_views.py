@@ -114,8 +114,15 @@ def incrustar_js(html: str, mirror: Path) -> int:
         if not bundle.exists():
             return m.group(0)
         incrustados += 1
-        # Sin `type="module"`: inline y clásico, para que corra sí o sí.
-        return f'<script>\n{bundle.read_text()}\n</script>'
+        # Sin `type="module"`: inline y clásico, para que corra sí o sí. Pero un
+        # script clásico en el <head> corre antes de que exista el body, y el
+        # módulo original estaba diferido: se envuelve en DOMContentLoaded para
+        # que el orden siga siendo el mismo.
+        return (
+            '<script>\ndocument.addEventListener("DOMContentLoaded",function(){\n'
+            f'{bundle.read_text()}\n'
+            '});\n</script>'
+        )
 
     html = re.sub(
         r'<script[^>]*type=["\']module["\'][^>]*src=["\']([^"\']+)["\'][^>]*>\s*</script>',
