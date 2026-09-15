@@ -73,6 +73,32 @@ def copiar_assets(dist: Path, destinos: list[Path]) -> int:
     return total
 
 
+def incrustar_css(html: str, dist: Path) -> int:
+    """La plataforma sirve los .css como `text/plain` y Chrome los descarta con
+    MIME estricto, así que la hoja va embebida en la view. Sólo las locales: las
+    de Google Fonts se dejan como link."""
+    incrustadas = 0
+
+    def sub(m):
+        nonlocal incrustadas
+        href = m.group(1)
+        if not href.startswith('/'):
+            return m.group(0)
+        ruta = dist / 'assets' / Path(href).name
+        if not ruta.exists():
+            return m.group(0)
+        incrustadas += 1
+        return f'<style>\n{ruta.read_text()}\n</style>'
+
+    html = re.sub(
+        r'<link[^>]+rel=["\']stylesheet["\'][^>]*href=["\']([^"\']+\.css)["\'][^>]*>', sub, html
+    )
+    html = re.sub(
+        r'<link[^>]+href=["\']([^"\']+\.css)["\'][^>]*rel=["\']stylesheet["\'][^>]*>', sub, html
+    )
+    return html, incrustadas
+
+
 def reescribir_links(html: str, ids: dict) -> tuple[str, int]:
     """Apunta cada href interno al preview de su view destino."""
     if not ids:
@@ -136,6 +162,8 @@ def main():
 
         html, n = reescribir_links(html, ids)
         total_links += n
+
+        html, _ = incrustar_css(html, dist)
 
         salida = views / f'{view}.blade.php'
         salida.parent.mkdir(parents=True, exist_ok=True)
