@@ -35,7 +35,7 @@
     visibility: hidden;
   }
 </style>
-<link rel="icon" type="image/png" href="/brand/teamit-logo.png" />
+<link rel="icon" type="image/png" href="/projects/teamit/assets/brand/teamit-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -43,10 +43,10 @@
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
 />
 
-    <script type="module" crossorigin src="/assets/main-CMaCdQwG.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/site-ho01C0BD.js">
-    <link rel="modulepreload" crossorigin href="/assets/three-BPBvCYsu.js">
-    <link rel="stylesheet" crossorigin href="/assets/site-B_lbNtm9.css">
+    <script type="module" crossorigin src="/projects/teamit/assets/assets/main-CMaCdQwG.js"></script>
+    <link rel="modulepreload" crossorigin href="/projects/teamit/assets/assets/site-ho01C0BD.js">
+    <link rel="modulepreload" crossorigin href="/projects/teamit/assets/assets/three-BPBvCYsu.js">
+    <link rel="stylesheet" crossorigin href="/projects/teamit/assets/assets/site-B_lbNtm9.css">
   </head>
 
   <body data-menu="closed">
@@ -285,16 +285,16 @@
 
 <header class="site-header" data-stuck="false">
   <div class="shell flex h-[72px] items-center justify-between">
-    <a href="/" class="logo-swap" aria-label="Team It — inicio">
+    <a href="/preview/1120" class="logo-swap" aria-label="Team It — inicio">
       <img
-        src="/brand/teamit-logo-dark.png"
+        src="/projects/teamit/assets/brand/teamit-logo-dark.png"
         alt="Team It"
         width="450"
         height="270"
         class="logo-on-dark h-9 w-auto"
       />
       <img
-        src="/brand/teamit-logo.png"
+        src="/projects/teamit/assets/brand/teamit-logo.png"
         alt=""
         aria-hidden="true"
         width="450"
@@ -304,7 +304,7 @@
     </a>
 
     <nav class="hidden items-center gap-8 lg:flex" aria-label="Principal">
-      <a class="nav-link" data-nav href="/#adn">Nuestro ADN</a>
+      <a class="nav-link" data-nav href="/preview/1120#adn">Nuestro ADN</a>
 
       <!--
         Servicios es el único mega menú: son cuatro destinos que se eligen por
@@ -322,10 +322,10 @@
             <p class="nav-mega__kicker">Nuestro portafolio</p>
 
             <div class="nav-mega__grid">
-              <a class="mega-card" href="/servicios/soluciones-de-infraestructura/" style="--i: 0">
+              <a class="mega-card" href="/preview/1128" style="--i: 0">
                 <span class="mega-card__media">
                   <img
-                    src="/img/teamit-rack.jpg"
+                    src="/projects/teamit/assets/img/teamit-rack.jpg"
                     alt=""
                     width="1086"
                     height="1448"
@@ -339,10 +339,10 @@
                 >
               </a>
 
-              <a class="mega-card" href="/servicios/servicios-profesionales/" style="--i: 1">
+              <a class="mega-card" href="/preview/1126" style="--i: 1">
                 <span class="mega-card__media">
                   <img
-                    src="/img/teamit-tecnico.jpg"
+                    src="/projects/teamit/assets/img/teamit-tecnico.jpg"
                     alt=""
                     width="1400"
                     height="933"
@@ -356,10 +356,10 @@
                 >
               </a>
 
-              <a class="mega-card" href="/servicios/cloud/" style="--i: 2">
+              <a class="mega-card" href="/preview/1129" style="--i: 2">
                 <span class="mega-card__media">
                   <img
-                    src="/img/teamit-cloud-bloques.jpg"
+                    src="/projects/teamit/assets/img/teamit-cloud-bloques.jpg"
                     alt=""
                     width="1400"
                     height="933"
@@ -373,10 +373,10 @@
                 >
               </a>
 
-              <a class="mega-card" href="/servicios/computo-general/" style="--i: 3">
+              <a class="mega-card" href="/preview/1127" style="--i: 3">
                 <span class="mega-card__media">
                   <img
-                    src="/img/teamit-computo.jpg"
+                    src="/projects/teamit/assets/img/teamit-computo.jpg"
                     alt=""
                     width="1400"
                     height="933"
@@ -394,8 +394,8 @@
             <div class="nav-mega__foot">
               <p>Se contratan por separado o como una sola solución operada por nosotros.</p>
               <div class="nav-mega__links">
-                <a href="/como-lo-hacemos/">Cómo lo hacemos</a>
-                <a href="/hablemos/">Hablemos</a>
+                <a href="/preview/1131">Cómo lo hacemos</a>
+                <a href="/preview/1130">Hablemos</a>
               </div>
             </div>
           </div>
@@ -408,33 +408,33 @@
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" /></svg>
         </button>
         <div class="nav-menu">
-          <a href="/recursos/garantias/">
+          <a href="/preview/1122">
             <span>Garantías</span>
             <small>Radica tu solicitud</small>
           </a>
-          <a href="/recursos/condiciones-de-garantias/">
+          <a href="/preview/1125">
             <span>Condiciones de garantías</span>
             <small>Procedimiento, cobertura y exclusiones</small>
           </a>
-          <a href="/recursos/pqrs/">
+          <a href="/preview/1121">
             <span>PQRS</span>
             <small>Peticiones, quejas, reclamos y felicitaciones</small>
           </a>
-          <a href="/recursos/recoleccion-de-residuos/">
+          <a href="/preview/1124">
             <span>Recolección de residuos</span>
             <small>Disposición de equipos en desuso</small>
           </a>
-          <a href="/recursos/videos/">
+          <a href="/preview/1123">
             <span>Videos</span>
             <small>Nuestro canal</small>
           </a>
         </div>
       </div>
 
-      <a class="nav-link" data-nav href="/como-lo-hacemos/">Cómo lo hacemos</a>
+      <a class="nav-link" data-nav href="/preview/1131">Cómo lo hacemos</a>
     </nav>
 
-    <a class="btn btn-primary hidden lg:inline-flex" href="/hablemos/">Hablemos</a>
+    <a class="btn btn-primary hidden lg:inline-flex" href="/preview/1130">Hablemos</a>
 
     <button
       data-menu-toggle
@@ -450,31 +450,31 @@
   <div class="mobile-menu lg:hidden" id="mobile-menu">
     <div class="mobile-menu__inner">
       <nav class="shell grid gap-1 py-6" aria-label="Principal (móvil)">
-        <a class="mobile-link" href="/#adn">Nuestro ADN</a>
+        <a class="mobile-link" href="/preview/1120#adn">Nuestro ADN</a>
 
         <p class="mobile-group">Servicios</p>
-        <a class="mobile-sub" href="/servicios/soluciones-de-infraestructura/"
+        <a class="mobile-sub" href="/preview/1128"
           >Soluciones de infraestructura</a
         >
-        <a class="mobile-sub" href="/servicios/servicios-profesionales/"
+        <a class="mobile-sub" href="/preview/1126"
           >Servicios profesionales</a
         >
-        <a class="mobile-sub" href="/servicios/cloud/">Cloud</a>
-        <a class="mobile-sub" href="/servicios/computo-general/">Cómputo general</a>
+        <a class="mobile-sub" href="/preview/1129">Cloud</a>
+        <a class="mobile-sub" href="/preview/1127">Cómputo general</a>
 
         <p class="mobile-group">Recursos</p>
-        <a class="mobile-sub" href="/recursos/garantias/">Garantías</a>
-        <a class="mobile-sub" href="/recursos/condiciones-de-garantias/"
+        <a class="mobile-sub" href="/preview/1122">Garantías</a>
+        <a class="mobile-sub" href="/preview/1125"
           >Condiciones de garantías</a
         >
-        <a class="mobile-sub" href="/recursos/pqrs/">PQRS</a>
-        <a class="mobile-sub" href="/recursos/recoleccion-de-residuos/"
+        <a class="mobile-sub" href="/preview/1121">PQRS</a>
+        <a class="mobile-sub" href="/preview/1124"
           >Recolección de residuos</a
         >
-        <a class="mobile-sub" href="/recursos/videos/">Videos</a>
+        <a class="mobile-sub" href="/preview/1123">Videos</a>
 
-        <a class="mobile-link mt-2" href="/como-lo-hacemos/">Cómo lo hacemos</a>
-        <a class="btn btn-primary mt-4" href="/hablemos/">Hablemos</a>
+        <a class="mobile-link mt-2" href="/preview/1131">Cómo lo hacemos</a>
+        <a class="btn btn-primary mt-4" href="/preview/1130">Hablemos</a>
       </nav>
     </div>
   </div>
@@ -504,7 +504,7 @@
               </p>
               <div class="mt-10 flex flex-wrap gap-3">
                 <a class="btn btn-primary" href="#portafolio">Ver portafolio</a>
-                <a class="btn btn-ghost" href="/hablemos/">Hablar con el equipo</a>
+                <a class="btn btn-ghost" href="/preview/1130">Hablar con el equipo</a>
               </div>
               <p class="scroll-cue eyebrow mt-14 text-white/40">
                 Haz scroll y descubre nuestro ADN
@@ -599,7 +599,7 @@
             <a class="pill-card" href="#contacto" data-reveal>
               <div class="card-media">
                 <img
-                  src="/img/teamit-rack.jpg"
+                  src="/projects/teamit/assets/img/teamit-rack.jpg"
                   alt="Frente de un rack de servidores iluminado por sus indicadores"
                   width="1086"
                   height="1448"
@@ -621,7 +621,7 @@
             <a class="pill-card" href="#contacto" data-reveal>
               <div class="card-media">
                 <img
-                  src="/img/teamit-tecnico.jpg"
+                  src="/projects/teamit/assets/img/teamit-tecnico.jpg"
                   alt="Técnico frente a un rack abierto en una sala de servidores"
                   width="1400"
                   height="933"
@@ -643,7 +643,7 @@
             <a class="pill-card" href="#contacto" data-reveal>
               <div class="card-media">
                 <img
-                  src="/img/teamit-cloud-bloques.jpg"
+                  src="/projects/teamit/assets/img/teamit-cloud-bloques.jpg"
                   alt="Bloques cúbicos flotantes con aristas iluminadas"
                   width="1400"
                   height="933"
@@ -665,7 +665,7 @@
             <a class="pill-card" href="#contacto" data-reveal>
               <div class="card-media">
                 <img
-                  src="/img/teamit-computo.jpg"
+                  src="/projects/teamit/assets/img/teamit-computo.jpg"
                   alt="Hilera de portátiles y monitores alineados sobre una mesa larga"
                   width="1400"
                   height="933"
@@ -720,7 +720,7 @@
             </h2>
             <figure class="como-media mt-[clamp(32px,5vw,56px)]" data-reveal>
               <img
-                src="/img/teamit-equipo.jpg"
+                src="/projects/teamit/assets/img/teamit-equipo.jpg"
                 alt="Tres integrantes del equipo técnico trabajando frente a los tableros de un centro de operaciones"
                 width="1800"
                 height="1012"
@@ -782,25 +782,25 @@
              las otras son decorativas. -->
         <div class="cert-marquee" data-reveal>
           <div class="cert-marquee__track">
-            <img src="/certs/goldpartner.png" alt="HPE Solution Provider · HPE Pointnext Services · Gold Partner" width="273" height="285" loading="lazy" />
-            <img src="/certs/greenlake.png" alt="HPE Solution Provider · HPE GreenLake Flex Capacity · Platinum Partner" width="272" height="285" loading="lazy" />
-            <img src="/certs/veeam.png" alt="Veeam CSP Partner Program" width="350" height="188" loading="lazy" />
-            <img src="/certs/vmpartner-network.png" alt="VMware Partner Network" width="345" height="159" loading="lazy" />
-            <img src="/certs/vmware-solutionprovider.png" alt="VMware Partner · Enterprise Solution Provider" width="292" height="219" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/goldpartner.png" alt="HPE Solution Provider · HPE Pointnext Services · Gold Partner" width="273" height="285" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/greenlake.png" alt="HPE Solution Provider · HPE GreenLake Flex Capacity · Platinum Partner" width="272" height="285" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/veeam.png" alt="Veeam CSP Partner Program" width="350" height="188" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/vmpartner-network.png" alt="VMware Partner Network" width="345" height="159" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/vmware-solutionprovider.png" alt="VMware Partner · Enterprise Solution Provider" width="292" height="219" loading="lazy" />
           </div>
           <div class="cert-marquee__track" aria-hidden="true">
-            <img src="/certs/goldpartner.png" alt="" width="273" height="285" loading="lazy" />
-            <img src="/certs/greenlake.png" alt="" width="272" height="285" loading="lazy" />
-            <img src="/certs/veeam.png" alt="" width="350" height="188" loading="lazy" />
-            <img src="/certs/vmpartner-network.png" alt="" width="345" height="159" loading="lazy" />
-            <img src="/certs/vmware-solutionprovider.png" alt="" width="292" height="219" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/goldpartner.png" alt="" width="273" height="285" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/greenlake.png" alt="" width="272" height="285" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/veeam.png" alt="" width="350" height="188" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/vmpartner-network.png" alt="" width="345" height="159" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/vmware-solutionprovider.png" alt="" width="292" height="219" loading="lazy" />
           </div>
           <div class="cert-marquee__track" aria-hidden="true">
-            <img src="/certs/goldpartner.png" alt="" width="273" height="285" loading="lazy" />
-            <img src="/certs/greenlake.png" alt="" width="272" height="285" loading="lazy" />
-            <img src="/certs/veeam.png" alt="" width="350" height="188" loading="lazy" />
-            <img src="/certs/vmpartner-network.png" alt="" width="345" height="159" loading="lazy" />
-            <img src="/certs/vmware-solutionprovider.png" alt="" width="292" height="219" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/goldpartner.png" alt="" width="273" height="285" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/greenlake.png" alt="" width="272" height="285" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/veeam.png" alt="" width="350" height="188" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/vmpartner-network.png" alt="" width="345" height="159" loading="lazy" />
+            <img src="/projects/teamit/assets/certs/vmware-solutionprovider.png" alt="" width="292" height="219" loading="lazy" />
           </div>
         </div>
       </section>
@@ -810,7 +810,7 @@
         <img
           class="band__img"
           data-parallax
-          src="/img/teamit-datacenter-pasillo.jpg"
+          src="/projects/teamit/assets/img/teamit-datacenter-pasillo.jpg"
           alt="Pasillo simétrico de un centro de datos con racks a lado y lado"
           width="1600"
           height="900"
@@ -892,7 +892,7 @@
       <h2 class="t-h2 mt-5 max-w-[14ch]" data-reveal-lines>
         Cuéntanos qué necesitas operar
       </h2>
-      <a class="btn btn-primary mt-8" href="/hablemos/">Armar mi solicitud</a>
+      <a class="btn btn-primary mt-8" href="/preview/1130">Armar mi solicitud</a>
       <p class="mt-4 max-w-[46ch] text-sm text-white/45">
         Seis preguntas y tienes una cotización en camino. O escríbenos directo.
       </p>
@@ -942,7 +942,7 @@
   <div class="shell grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto]">
     <div>
       <img
-        src="/brand/teamit-logo-dark.png"
+        src="/projects/teamit/assets/brand/teamit-logo-dark.png"
         alt="Team It"
         width="450"
         height="270"
@@ -957,33 +957,33 @@
     <nav class="grid gap-10 sm:grid-cols-3" aria-label="Pie de página">
       <div>
         <p class="foot-title">Servicios</p>
-        <a class="foot-link" href="/servicios/soluciones-de-infraestructura/"
+        <a class="foot-link" href="/preview/1128"
           >Soluciones de infraestructura</a
         >
-        <a class="foot-link" href="/servicios/servicios-profesionales/"
+        <a class="foot-link" href="/preview/1126"
           >Servicios profesionales</a
         >
-        <a class="foot-link" href="/servicios/cloud/">Cloud</a>
-        <a class="foot-link" href="/servicios/computo-general/">Cómputo general</a>
+        <a class="foot-link" href="/preview/1129">Cloud</a>
+        <a class="foot-link" href="/preview/1127">Cómputo general</a>
       </div>
       <div>
         <p class="foot-title">Recursos</p>
-        <a class="foot-link" href="/recursos/garantias/">Garantías</a>
-        <a class="foot-link" href="/recursos/condiciones-de-garantias/"
+        <a class="foot-link" href="/preview/1122">Garantías</a>
+        <a class="foot-link" href="/preview/1125"
           >Condiciones de garantías</a
         >
-        <a class="foot-link" href="/recursos/pqrs/">PQRS</a>
-        <a class="foot-link" href="/recursos/recoleccion-de-residuos/"
+        <a class="foot-link" href="/preview/1121">PQRS</a>
+        <a class="foot-link" href="/preview/1124"
           >Recolección de residuos</a
         >
-        <a class="foot-link" href="/recursos/videos/">Videos</a>
+        <a class="foot-link" href="/preview/1123">Videos</a>
       </div>
       <div>
         <p class="foot-title">Compañía</p>
-        <a class="foot-link" href="/#adn">Nuestro ADN</a>
-        <a class="foot-link" href="/como-lo-hacemos/">Cómo lo hacemos</a>
-        <a class="foot-link" href="/#politica">Política integral</a>
-        <a class="foot-link" href="/#contacto">Contacto</a>
+        <a class="foot-link" href="/preview/1120#adn">Nuestro ADN</a>
+        <a class="foot-link" href="/preview/1131">Cómo lo hacemos</a>
+        <a class="foot-link" href="/preview/1120#politica">Política integral</a>
+        <a class="foot-link" href="/preview/1120#contacto">Contacto</a>
       </div>
     </nav>
   </div>

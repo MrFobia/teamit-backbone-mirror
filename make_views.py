@@ -53,10 +53,15 @@ for archivo, view in PAGINAS.items():
     RUTAS[carpeta.rstrip('/')] = view  # /servicios/cloud
 
 
+# Carpetas del build que son recursos, no páginas. El resto de `dist/` son
+# carpetas de rutas (servicios/, recursos/, …) y no van al árbol público.
+RECURSOS = ('assets', 'brand', 'certs', 'img', 'partners')
+
+
 def copiar_assets(dist: Path, destinos: list[Path]) -> int:
     """La plataforma publica `assets/` de la raíz y `production/views/assets/`
     como par; se escriben los dos para que no queden desfasados."""
-    fuentes = [d for d in dist.iterdir() if d.is_dir()]
+    fuentes = [dist / n for n in RECURSOS if (dist / n).is_dir()]
     total = 0
     for destino in destinos:
         if destino.exists():
@@ -78,13 +83,15 @@ def reescribir_links(html: str, ids: dict) -> tuple[str, int]:
     def sub(m):
         nonlocal cambios
         comilla, href = m.group(1), m.group(2)
-        view = RUTAS.get(href) or RUTAS.get(href.rstrip('/') or '/')
+        # El ancla viaja con el link: `/#adn` tiene que caer en el home.
+        ruta, sep, frag = href.partition('#')
+        view = RUTAS.get(ruta) or RUTAS.get(ruta.rstrip('/') or '/')
         if view and view in ids:
             cambios += 1
-            return f'href={comilla}/preview/{ids[view]}{comilla}'
+            return f'href={comilla}/preview/{ids[view]}{sep}{frag}{comilla}'
         return m.group(0)
 
-    html = re.sub(r'href=(["\'])(/[^"\'#?]*)\1', sub, html)
+    html = re.sub(r'href=(["\'])(/[^"\'?]*)\1', sub, html)
     return html, cambios
 
 
@@ -118,11 +125,14 @@ def main():
     for origen, view in PAGINAS.items():
         html = (dist / origen).read_text()
 
-        # El build referencia /assets/... ; si la plataforma los sirve bajo otro
-        # prefijo, se reescribe acá y no hay que tocar el sitio.
-        if args.asset_base != '/assets':
-            html = html.replace('"/assets/', f'"{args.asset_base}/')
-            html = html.replace("'/assets/", f"'{args.asset_base}/")
+        # El build referencia los recursos desde la raíz (`/assets/…`,
+        # `/img/…`). La plataforma los publica bajo `/projects/{slug}/assets/`,
+        # así que se les antepone ese prefijo sin tocar el sitio original.
+        for carpeta in RECURSOS:
+            for comilla in ('"', "'"):
+                html = html.replace(
+                    f'{comilla}/{carpeta}/', f'{comilla}{args.asset_base}/{carpeta}/'
+                )
 
         html, n = reescribir_links(html, ids)
         total_links += n
