@@ -99,6 +99,40 @@ def incrustar_css(html: str, dist: Path) -> int:
     return html, incrustadas
 
 
+def incrustar_js(html: str, mirror: Path) -> int:
+    """Mismo problema que el CSS, peor: los .js salen como `text/plain` y la
+    respuesta trae `nosniff`, así que el navegador no ejecuta nada externo.
+    Se reemplaza cada módulo por su bundle IIFE embebido (ver
+    `vite.mirror.config.js`), que no tiene imports que resolver."""
+    incrustados = 0
+
+    def sub(m):
+        nonlocal incrustados
+        src = m.group(1)
+        nombre = Path(src).name.split('-')[0]  # main-CMaCdQwG.js → main
+        bundle = mirror / f'{nombre}.bundle.js'
+        if not bundle.exists():
+            return m.group(0)
+        incrustados += 1
+        # Sin `type="module"`: inline y clásico, para que corra sí o sí.
+        return f'<script>\n{bundle.read_text()}\n</script>'
+
+    html = re.sub(
+        r'<script[^>]*type=["\']module["\'][^>]*src=["\']([^"\']+)["\'][^>]*>\s*</script>',
+        sub,
+        html,
+    )
+
+    # Lo que sobra son los chunks compartidos que Vite separa (`site-*.js`) y
+    # sus modulepreload: el bundle ya los trae adentro, y externos sólo pedirían
+    # archivos que el navegador no va a ejecutar.
+    html = re.sub(
+        r'<script[^>]*src=["\'][^"\']*/assets/[^"\']+\.js["\'][^>]*>\s*</script>', '', html
+    )
+    html = re.sub(r'<link[^>]*rel=["\']modulepreload["\'][^>]*>', '', html)
+    return html, incrustados
+
+
 def reescribir_links(html: str, ids: dict) -> tuple[str, int]:
     """Apunta cada href interno al preview de su view destino."""
     if not ids:
@@ -124,6 +158,11 @@ def reescribir_links(html: str, ids: dict) -> tuple[str, int]:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dist', default=str(DIST))
+    ap.add_argument(
+        '--mirror',
+        default=str(DIST.parent / 'dist-mirror'),
+        help='Salida de vite.mirror.config.js: los bundles IIFE que van embebidos.',
+    )
     ap.add_argument(
         '--asset-base',
         default='/assets',
@@ -164,6 +203,7 @@ def main():
         total_links += n
 
         html, _ = incrustar_css(html, dist)
+        html, _ = incrustar_js(html, Path(args.mirror))
 
         salida = views / f'{view}.blade.php'
         salida.parent.mkdir(parents=True, exist_ok=True)
